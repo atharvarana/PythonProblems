@@ -1,0 +1,23 @@
+SPY GAME: Write a function that takes in a list of integers and returns True if it contains 007 in order
+spy_game([1,2,4,0,0,7,5]) --> True
+spy_game([1,0,2,4,0,5,7]) --> True
+spy_game([1,7,2,0,4,5,0]) --> False
+
+def spy_game(nums):
+    
+    code=[0,0,7,'x']
+    
+    #if i will pop this once then this will become [0,7,'x']
+    # if i do it again then this will be [7,'x']
+    # if i do it again then this will be ['x']
+    # and length of ['x'] is 1 : len(['x'])=1
+    
+    for num in nums:
+        if code[0]==num:
+            code.pop(0)
+    
+    if len(code)==1:
+        return True
+    else:
+        return False
+    
